@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const GEO = require('./utils/GEO.js')
 const forecast = require('./utils/forecast.js')
 const app = express()
+const port = process.env.PORT || 3000
 
 console.log(__dirname)
 console.log(path.join(__dirname , '../public'))
@@ -87,6 +88,6 @@ app.get('*',(req,res)=>{
     res.send('my 404 page')
 })
 
-app.listen(3000 , ()=>{
-    console.log('Server is up on port 3000')
+app.listen(port, ()=>{
+    console.log('Server is up on port'+ port)
 })
